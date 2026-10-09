@@ -1,0 +1,50 @@
+[
+  {
+    "name": "clear positive feedback",
+    "input": "The mentor session was useful and well organized.",
+    "expected_category": "Positive Feedback",
+    "purpose": "Checks a direct positive statement."
+  },
+  {
+    "name": "clear question",
+    "input": "Could you tell me when the next task is due?",
+    "expected_category": "Question",
+    "purpose": "Checks an information request."
+  },
+  {
+    "name": "clear suggestion",
+    "input": "Please add a calendar to show upcoming deadlines.",
+    "expected_category": "Suggestion",
+    "purpose": "Checks a proposed improvement."
+  },
+  {
+    "name": "clear complaint",
+    "input": "My submitted task disappeared from the portal.",
+    "expected_category": "Complaint",
+    "purpose": "Checks a specific reported problem."
+  },
+  {
+    "name": "ambiguous or out-of-domain text",
+    "input": "Blue quickly the window although tomorrow.",
+    "expected_category": null,
+    "purpose": "Qualitative failure case: the model will still choose a category, so inspect confidence and do not assume it understands the message."
+  },
+  {
+    "name": "empty message",
+    "input": "",
+    "expected_category": null,
+    "purpose": "Must be rejected by input validation."
+  },
+  {
+    "name": "whitespace-only message",
+    "input": "   ",
+    "expected_category": null,
+    "purpose": "Must be rejected by input validation."
+  },
+  {
+    "name": "overlong message",
+    "input": "x",
+    "expected_category": null,
+    "purpose": "The unit tests create a message longer than 2,000 characters to verify the input limit."
+  }
+]
